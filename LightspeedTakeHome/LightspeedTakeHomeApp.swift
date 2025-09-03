@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct LightspeedTakeHomeApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistence = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            PicsumPhotoListView(context: persistence.container.viewContext)
+                .environment(\.managedObjectContext, persistence.container.viewContext)
         }
     }
 }
