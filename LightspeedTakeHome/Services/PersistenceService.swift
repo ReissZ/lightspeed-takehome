@@ -1,5 +1,5 @@
 //
-//  PersistenceController.swift
+//  PersistenceService.swift
 //  LightspeedTakeHome
 //
 //  Created by Reiss Zurbyk on 2025-09-02.
@@ -7,12 +7,12 @@
 
 import CoreData
 
-struct PersistenceController {
-    static let shared = PersistenceController()
+struct PersistenceService {
+    static let shared = PersistenceService()
 
     @MainActor
-    static let preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
+    static let preview: PersistenceService = {
+        let result = PersistenceService(inMemory: true)
         let ctx = result.container.viewContext
 
         for i in 0..<2 {
@@ -51,7 +51,7 @@ struct PersistenceController {
     }
 }
 
-extension PersistenceController {
+extension PersistenceService {
     var backgroundContext: NSManagedObjectContext {
         let ctx = container.newBackgroundContext()
         ctx.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy

@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct LightspeedTakeHomeApp: App {
-    let persistence = PersistenceController.shared
+    let persistence = PersistenceService.shared
 
     var body: some Scene {
         WindowGroup {

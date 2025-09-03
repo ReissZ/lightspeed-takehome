@@ -48,7 +48,7 @@ final class PhotoListViewModel: ObservableObject {
 
             let nextOrder: Int32 = (photos.last?.order ?? -1) + 1
 
-            let bg = PersistenceController.shared.backgroundContext
+            let bg = PersistenceService.shared.backgroundContext
             try await bg.perform {
                 let req: NSFetchRequest<PhotoEntity> = PhotoEntity.fetchRequest()
                 req.predicate = NSPredicate(format: "id == %@", random.id)

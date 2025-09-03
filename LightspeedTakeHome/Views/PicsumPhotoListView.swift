@@ -95,7 +95,7 @@ struct PicsumPhotoListView: View {
 }
 
 #Preview("PicsumPhotoListView – Mocked") {
-    let persistence = PersistenceController(inMemory: true)
+    let persistence = PersistenceService(inMemory: true)
     let ctx = persistence.container.viewContext
 
     for i in 0..<2 {
