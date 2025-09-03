@@ -26,7 +26,6 @@ struct AboutView: View {
             Text("Crafted by Reiss Zurbyk")
                 .font(.headline)
 
-            // Replace with your links
             HStack(spacing: 20) {
                 Link("GitHub", destination: URL(string: "https://github.com/reissz")!)
                 Link("LinkedIn", destination: URL(string: "https://www.linkedin.com/in/reiss-zurbyk/")!)
